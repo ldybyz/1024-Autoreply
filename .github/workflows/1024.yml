@@ -4,9 +4,9 @@ on:
   workflow_dispatch: # 手动触发
   push:
     branches:
-      - Multi_User
+      - mybranch
   schedule:
-    - cron: '34 21 * * *'
+    - cron: '30 10-20 * * *'
 
 
 jobs:
@@ -26,7 +26,7 @@ jobs:
 
         pip3 install requests onetimepass pillow
 
-    - name: run 1024.py
+    - name: run my1024.py
       env:
         USER: ${{ secrets.USER }}
         PASSWORD: ${{ secrets.PASSWORD }}
@@ -37,4 +37,4 @@ jobs:
         USERID: ${{ secrets.USERID }}
         APIKEY: ${{ secrets.APIKEY }}
       run:
-        python3 1024.py
+        python3 my1024.py
